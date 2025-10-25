@@ -5,6 +5,7 @@ token = "YOU_TOKEN" #Ваш Oauth токен, где его взять: https://
 
 if token == "YOU_TOKEN" or "":
     print('Замените token = "YOU_TOKEN" в main.py на ваш Oauth токен, где его взять? -> https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781')
+    exit()
 
 #print("Название трека: это называется любовь")
 print("Скрипт from MEL0NCHICKС ищет преимущественно именно по названию трека, и скачивает песню полностью)))")
@@ -42,5 +43,6 @@ for char in invalid_chars:
 print("Скачиваем: ", actual_track, filename)
 
 download_file(actual_track, filename, token)
+
 
 
