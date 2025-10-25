@@ -75,16 +75,14 @@ def download_file(track_id: int, filename: str, token: str):
     hmac_sign = hmac.new(
             DEFAULT_SIGN_KEY.encode(),
             "".join(str(e) for e in params.values()).replace(",", "").encode(),
-            hashlib.sha256,
+            hashlib.sha256
         )
 
     sign = base64.b64encode(hmac_sign.digest()).decode()[:-1]
 
     params["sign"] = sign
 
-    response = requests.get(
-            f"https://api.music.yandex.net/tracks/{track_id}/download-info", params=params, headers=header
-        )
+    response = requests.get(f"https://api.music.yandex.net/tracks/{track_id}/download-info", params=params, headers=header)
     print("\n", response.json())
 
     textresp = response.json()
@@ -99,7 +97,7 @@ def download_file(track_id: int, filename: str, token: str):
     host = re.search(r"<host>(.*?)</host>", downreq.text).group(1)
     path = re.search(r"<path>(.*?)</path>", downreq.text).group(1)
     ts = re.search(r"<ts>(.*?)</ts>", downreq.text).group(1)
-    region =re.search(r"<region>(.*?)</region>", downreq.text).group(1)
+    region = re.search(r"<region>(.*?)</region>", downreq.text).group(1)
     s = re.search(r"<s>(.*?)</s>", downreq.text).group(1)
     sign = md5((SIGN_SALT + path[1::] + s).encode('UTF-8')).hexdigest()
 
@@ -112,4 +110,5 @@ def download_file(track_id: int, filename: str, token: str):
     with open(f"{filename}", "wb") as f:
 
         f.write(file.content)
+
 
