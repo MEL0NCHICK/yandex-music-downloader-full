@@ -1,6 +1,7 @@
 # yandex-music-downloader-full
 
 Минимальный удобный скрипт для полного скачивания музыки из яндекс музыки
+
 Проект основан на: [Этом проекте](https://github.com/MarshalX/yandex-music-api)
 
 ## License
@@ -11,4 +12,5 @@ MIT License - смотрите файл [LICENSE](LICENSE)
 
 ## Как использовать
 Вставте в файл main.py свой Oauth токен как его узнать указано [тут](https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781)
+
 Запустите файл main.py, дальше сами поймете, там все написано :)
