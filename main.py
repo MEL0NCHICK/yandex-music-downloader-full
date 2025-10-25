@@ -1,7 +1,7 @@
 import requests
 from download import download_file
 
-token = "y0__xCU6tyZBhje-AYgtI-e6xTu4ghvMYZaGLWvVdt-jNBssdvh7Q" #Ваш Oauth токен, где его взять: https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781
+token = "" #Ваш Oauth токен, где его взять: https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781
 
 #print("Название трека: это называется любовь")
 print("Скрипт from MEL0NCHICKС ищет преимущественно именно по названию трека, и скачивает песню полностью)))")
@@ -37,4 +37,5 @@ for char in invalid_chars:
     filename = filename.replace(char, " ")
 
 print("Скачиваем: ", actual_track, filename)
+
 download_file(actual_track, filename, token)
