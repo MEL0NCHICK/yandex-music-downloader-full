@@ -49,7 +49,7 @@ FILE_FORMAT_MAPPING = {
 
 
 
-SIGN_SALT = 'XGRlBW9FXlekgbPrRHuSiA' #Незнаю что это, но в https://github.com/MarshalX/yandex-music-api/ на чьей основе я сделал скрипт оно было, так что пусть будет
+SIGN_SALT = 'XGRlBW9FXlekgbPrRHuSiA' #Для генерации ссылки, я незнаю откуда https://github.com/MarshalX/yandex-music-api/ на чьей основе я сделал скрипт оно было её взял 
 
 def download_file(track_id: int, filename: str, token: str):
     """  "quality":
@@ -110,4 +110,5 @@ def download_file(track_id: int, filename: str, token: str):
     file = requests.get(url=download_url)
     print("\n", "И сохраняем в:", filename)
     with open(f"{filename}", "wb") as f:
+
         f.write(file.content)
