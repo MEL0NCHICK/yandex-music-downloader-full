@@ -11,6 +11,7 @@ from hashlib import md5
 import requests
 from yandex_music.utils.sign_request import DEFAULT_SIGN_KEY
 
+SIGN_SALT = 'XGRlBW9FXlekgbPrRHuSiA' #Для генерации ссылки https://github.com/MarshalX/yandex-music-api/ на чьей основе я сделал скрипт оно было взял её из мобильного приложени/клиента для пк
 
 class Container(Enum):
     FLAC = auto()
@@ -47,10 +48,6 @@ FILE_FORMAT_MAPPING = {
     "he-aac-mp4": FileFormat(Container.MP4, Codec.AAC),
 }
 
-
-
-
-SIGN_SALT = 'XGRlBW9FXlekgbPrRHuSiA' #Для генерации ссылки https://github.com/MarshalX/yandex-music-api/ на чьей основе я сделал скрипт оно было взял её из мобильного приложени/клиента для пк
 
 def download_file(track_id: int, filename: str, token: str):
     """  "quality":
@@ -111,6 +108,7 @@ def download_file(track_id: int, filename: str, token: str):
     with open(f"{filename}", "wb") as f:
 
         f.write(file.content)
+
 
 
 
