@@ -1,14 +1,15 @@
-import typing
-import requests
+import base64
+import hashlib
+import hmac
+import re
 import time
+import typing
 from dataclasses import dataclass
 from enum import Enum, auto
-import base64
-import hmac
-import hashlib
-from yandex_music.utils.sign_request import DEFAULT_SIGN_KEY
-import re
 from hashlib import md5
+
+import requests
+from yandex_music.utils.sign_request import DEFAULT_SIGN_KEY
 
 
 class Container(Enum):
@@ -110,5 +111,6 @@ def download_file(track_id: int, filename: str, token: str):
     with open(f"{filename}", "wb") as f:
 
         f.write(file.content)
+
 
 
