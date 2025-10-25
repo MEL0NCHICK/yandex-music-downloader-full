@@ -3,7 +3,7 @@ from download import download_file
 
 token = "YOU_TOKEN" #Ваш Oauth токен, где его взять: https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781
 
-if token = "YOU_TOKEN" or "":
+if token == "YOU_TOKEN" or "":
     print('Замените token = "YOU_TOKEN" в main.py на ваш Oauth токен, где его взять? -> https://github.com/MarshalX/yandex-music-api/discussions/513#discussioncomment-2729781')
 
 #print("Название трека: это называется любовь")
@@ -42,4 +42,5 @@ for char in invalid_chars:
 print("Скачиваем: ", actual_track, filename)
 
 download_file(actual_track, filename, token)
+
 
